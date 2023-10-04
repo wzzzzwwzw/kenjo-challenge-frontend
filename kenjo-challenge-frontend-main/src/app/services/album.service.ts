@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+import {Album} from "../shared/models/album";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {ALBUM_URL} from "../shared/constants/urls";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AlbumService {
+
+  constructor(private http:HttpClient) { }
+
+  getAll():Observable<Album[]>{
+    return this.http.get<Album[]>(ALBUM_URL+'/all');
+  }
+}

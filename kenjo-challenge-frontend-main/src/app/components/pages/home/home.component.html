@@ -1,0 +1,39 @@
+<ul>
+    <li *ngFor="let album of albums">
+        <a routerLink="/album/{{album._id}}">
+
+            <div class="content">
+                <div class="title">
+                    {{album.title}}
+                </div>
+                <div class="artist">
+                    {{album.artist}}
+                </div>
+                <img [src]="album.photoUrl" [alt]="album.title"/>
+                <div class="year">
+
+                    {{album.year}}
+                </div>
+
+                <div class="genre">
+
+                    {{album.genre}}
+                </div>
+
+                <div class="stars">
+                    <star-rating
+                            [value]="album.stars"
+                            [totalstars]="5"
+                            checkedcolor="red"
+                            uncheckedcolor="black"
+                            size="22px"
+                            [readonly]="true">
+                    </star-rating>
+                </div>
+
+                </div>
+
+        </a>
+    </li>
+</ul>
+
