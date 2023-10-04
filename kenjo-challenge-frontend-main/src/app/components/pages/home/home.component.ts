@@ -26,4 +26,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDeleteAlbum(albumId: string) {
+
+    this.albumService.deleteAlbum(albumId).subscribe(
+        () => {
+          // Handle success, e.g., show a success message or update the UI.
+          console.log('Album deleted successfully');
+        },
+        (error) => {
+          // Handle error, e.g., show an error message.
+          console.error('Error deleting album', error);
+        }
+    );
+  }
+
 }

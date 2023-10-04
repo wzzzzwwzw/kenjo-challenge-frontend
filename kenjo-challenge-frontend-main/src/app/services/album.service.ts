@@ -14,4 +14,12 @@ export class AlbumService {
   getAll():Observable<Album[]>{
     return this.http.get<Album[]>(ALBUM_URL+'/all');
   }
+
+  deleteAlbum(albumId: string): Observable<void> {
+    const url = `${ALBUM_URL}/${albumId}`;
+    return this.http.delete<void>(url);
+  }
+
+
+
 }
