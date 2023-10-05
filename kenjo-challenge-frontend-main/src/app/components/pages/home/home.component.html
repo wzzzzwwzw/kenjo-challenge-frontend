@@ -29,7 +29,7 @@
 
 <div *ngIf="!loading && albumsList.length === 0"
      class="alert alert-warning text-center mt-3 animated fadeIn faster">
-    <h4 class="alert-heading">There is no data</h4>
+    <h4 class="alert-heading">There is no data!</h4>
     <p>
         <i class="fa fa-exclamation fa-2x"></i>
     </p>
@@ -37,11 +37,11 @@
 
 <div *ngIf="loading"
      class="alert alert-info text-center mt-3 animated fadeIn faster">
-    <h4 class="alert-heading">Loading</h4>
+    <h4 class="alert-heading">Loading..</h4>
     <p>
         <i class="fa fa-sync-alt fa-spin fa-2x"></i>
     </p>
     <p class="mb-0">
-        Wait please
+        Wait please..
     </p>
 </div>
