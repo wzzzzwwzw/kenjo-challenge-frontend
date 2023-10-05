@@ -15,6 +15,11 @@
             <h5 class="card-title">{{ album.title }}</h5>
             <p class="card-text">Release: {{ album.year }}</p>
             <p class="card-text">Genre: <span class="badge badge-dark">{{ album.genre }}</span></p>
+            <p class="card-text">Score: {{ album.score }}</p>
+
+
+
+
             <button class="btn btn-info mr-1"
                     [routerLink]="['/album', album._id]">
                 <i class="fa fa-pen"></i>

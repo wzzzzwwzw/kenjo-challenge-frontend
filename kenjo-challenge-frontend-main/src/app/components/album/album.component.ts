@@ -23,7 +23,7 @@ export class AlbumComponent implements OnInit {
 
   album: AlbumModel = new AlbumModel();
 
-
+  artist: ArtistModel = new ArtistModel();
 
   artistsList: ArtistModel[] = [];
 
@@ -46,13 +46,17 @@ export class AlbumComponent implements OnInit {
     }
 
   }
-
+  scoreAlbum(score: number) {
+    this.album.score = score;
+  }
   save(form: NgForm) {
 
     if (form.invalid) {
       console.log('Form is not valid');
       return;
     }
+    this.scoreAlbum(form.value.score);
+
 
     Swal.fire({
       title: 'Wait',

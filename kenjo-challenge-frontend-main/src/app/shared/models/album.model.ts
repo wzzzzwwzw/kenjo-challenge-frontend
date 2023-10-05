@@ -7,5 +7,6 @@ export class AlbumModel {
     coverUrl!: string ;
     year!: number ;
     genre!: string ;
+    score?:number;
 
 }
