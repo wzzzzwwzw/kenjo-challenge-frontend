@@ -19,6 +19,7 @@ import { AlbumComponent } from './components/album/album.component';
 import {ArtistsListComponent} from "./components/artists-list/artists-list.component";
 import {NavbarComponent} from "./shared/navbar/navbar.component";
 import {ROUTES} from "./app.routes";
+import { FooterComponent } from './components/pages/footer/footer.component';
 
 
 
@@ -30,7 +31,8 @@ import {ROUTES} from "./app.routes";
     ArtistComponent,
     AlbumComponent,
     ArtistsListComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [RatingModule,
     BrowserModule,
