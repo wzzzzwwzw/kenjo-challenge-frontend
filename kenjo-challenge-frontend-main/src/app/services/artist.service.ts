@@ -13,25 +13,25 @@ export class ArtistService {
 
   getAllArtists(){
 
-    return this.http.get(`${ARTIST_URL }/all`);
+    return this.http.get(`${ ARTIST_URL }/artist/all`);
 
   }
 
   getArtistById( id: string) {
 
-    return this.http.get(`${ ARTIST_URL }${ id }`);
+    return this.http.get(`${ ARTIST_URL }/artist/${ id }`);
 
   }
 
   deleteArtist( id: string) {
 
-    return this.http.delete(`${ ARTIST_URL }${ id }`);
+    return this.http.delete(`${ ARTIST_URL }/artist/${ id }`);
 
   }
 
   createArtist(artist: ArtistModel) {
 
-    return this.http.post(`${ ARTIST_URL}`, artist)
+    return this.http.post(`${ ARTIST_URL}/artist/create`, artist)
         .pipe(
             map((resp: any) => {
               artist._id = resp._id;

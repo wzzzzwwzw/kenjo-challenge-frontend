@@ -27,12 +27,17 @@ export class AlbumComponent implements OnInit {
 
   artistsList: ArtistModel[] = [];
 
-  constructor(private artistService: ArtistService,
+  constructor(private artists:ArtistService,
               private albumService: AlbumService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(){
+
+    this.artists.getAllArtists()
+        .subscribe((data: any) => {
+          this.artistsList = data;
+        });
 
     const id= this.route.snapshot.paramMap.get('id');
 
