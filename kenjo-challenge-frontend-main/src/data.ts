@@ -1,6 +1,6 @@
-import {Album} from "./app/shared/models/album";
+import {AlbumModel} from "./app/shared/models/album.model";
 
-export const sample_albums: Album[] = [
+export const sample_albums: AlbumModel[] = [
     {
         _id:'1',
         title: 'Eminem',

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,27 +9,28 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-
-import { AlbumListComponent } from './album-list/album-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
-
-
-
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import {RatingModule} from "ng-starrating";
 import {AppRoutingModule} from "./app-routing.module";
+import { ArtistComponent } from './components/artist/artist.component';
+import { AlbumComponent } from './components/album/album.component';
+import {ArtistsListComponent} from "./components/artists-list/artists-list.component";
+import {NavbarComponent} from "./shared/navbar/navbar.component";
+import {ROUTES} from "./app.routes";
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlbumListComponent,
-    NewAlbumDialog,
     HeaderComponent,
     HomeComponent,
+    ArtistComponent,
+    AlbumComponent,
+    ArtistsListComponent,
+    NavbarComponent
   ],
   imports: [RatingModule,
     BrowserModule,
@@ -43,6 +43,8 @@ import {AppRoutingModule} from "./app-routing.module";
     FormsModule,
     HttpClientModule,
     MatDialogModule,
+    RouterModule.forRoot( ROUTES, { useHash: true} )
+
 
   ],
 

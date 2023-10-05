@@ -1,43 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import {Album} from "../../../shared/models/album";
+import { Component } from '@angular/core';
+
+import Swal from 'sweetalert2';
+import {AlbumModel} from "../../../shared/models/album.model";
 import {AlbumService} from "../../../services/album.service";
-import {ActivatedRoute} from "@angular/router";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styles: [
+  ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  albums:Album[]=[];
-  constructor(private albumService :AlbumService,activatedRoute :ActivatedRoute) {
-    let albumsObservable: Observable<Album[]>;
-    activatedRoute.params.subscribe((params) => {
+  albumsList: AlbumModel[] = [];
+  loading = false;
 
-      albumsObservable = albumService.getAll();
-      albumsObservable.subscribe((serverAlbums) => {
-        this.albums = serverAlbums;
-      })
+  constructor(private albumService: AlbumService) { }
+
+  ngOnInit() {
+    this.loading = true;
+    this.albumService.getAll()
+        .subscribe((resp: any) => {
+          this.albumsList = resp
+          this.loading = false;
+        });
+  }
+
+  deleteAlbum( album: AlbumModel, i: number){
+
+    Swal.fire({
+      title:'Are you sure?',
+      text:`Do you want to delete ${ album.title } ?`,
+      icon: 'question',
+      showConfirmButton: true,
+      showCancelButton: true
+    }).then( resp => {
+      if ( resp.value ) {
+        this.albumsList.splice(i, 1);
+
+        this.albumService.deleteAlbum( album._id ).subscribe();
+      }
     })
+
   }
-
-  ngOnInit(): void {
-  }
-
-  onDeleteAlbum(albumId: string) {
-
-    this.albumService.deleteAlbum(albumId).subscribe(
-        () => {
-          // Handle success, e.g., show a success message or update the UI.
-          console.log('Album deleted successfully');
-        },
-        (error) => {
-          // Handle error, e.g., show an error message.
-          console.error('Error deleting album', error);
-        }
-    );
-  }
-
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
+
 
 @Component({
   selector: 'app-root',
@@ -14,8 +14,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialogNewAlbum() {
-    this.dialog.open(NewAlbumDialog, { data: {test : true}});
-  }
+
 
 }

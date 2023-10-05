@@ -1,43 +1,47 @@
-<ul>
-    <li *ngFor="let album of albums">
-        <a routerLink="/album/{{album._id}}">
+<div class="row">
+    <div class="col text-right">
+        <button routerLink="/album/new" class="btn btn-primary mb-2">
+            <i class="fa fa-plus">
+                Add new Album
+            </i>
+        </button>
+    </div>
+</div>
 
-            <div class="content">
-                <div class="title">
-                    {{album.title}}
-                </div>
-                <div class="artist">
-                    {{album.artist}}
-                </div>
-                <img [src]="album.photoUrl" [alt]="album.title"/>
-                <div class="year">
+<div class="card-columns animated fadeIn faster">
+    <div *ngFor="let album of albumsList; let i = index" class="card">
+        <img [src]="album.coverUrl" class="card-img-top" [alt]="album.title">
+        <div class="card-body">
+            <h5 class="card-title">{{ album.title }}</h5>
+            <p class="card-text">Release: {{ album.year }}</p>
+            <p class="card-text">Genre: <span class="badge badge-dark">{{ album.genre }}</span></p>
+            <button class="btn btn-info mr-1"
+                    [routerLink]="['/album', album._id]">
+                <i class="fa fa-pen"></i>
+            </button>
+            <button class="btn btn-danger"
+                    (click)="deleteAlbum( album , i)">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
-                    {{album.year}}
-                </div>
+<div *ngIf="!loading && albumsList.length === 0"
+     class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">There is no data</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
 
-                <div class="genre">
-
-                    {{album.genre}}
-                </div>
-
-                <div class="stars">
-                    <star-rating
-                            [value]="album.stars"
-                            [totalstars]="5"
-                            checkedcolor="red"
-                            uncheckedcolor="black"
-                            size="22px"
-                            [readonly]="true">
-                    </star-rating>
-                </div>
-
-                </div>
-
-        </a>
-        <button (click)="onDeleteAlbum(album._id)">Delete Album</button>
-
-    </li>
-
-
-</ul>
-
+<div *ngIf="loading"
+     class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Loading</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Wait please
+    </p>
+</div>
