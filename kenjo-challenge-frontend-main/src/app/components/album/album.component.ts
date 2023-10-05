@@ -23,7 +23,7 @@ export class AlbumComponent implements OnInit {
 
   album: AlbumModel = new AlbumModel();
 
-  artist: ArtistModel = new ArtistModel();
+
 
   artistsList: ArtistModel[] = [];
 
@@ -33,21 +33,18 @@ export class AlbumComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(){
-/*
-    this.artist.getAllArtists()
-        .subscribe((data: any) => {
-          this.artistsList = data;
-        });
 
-    const id = this.route.snapshot.paramMap.get('id');
+    const id= this.route.snapshot.paramMap.get('id');
 
     if ( id !== 'new') {
-      this.albumService.getAlbumById(id)
-          .subscribe( (resp: AlbumModel) => {
-            this.album = resp;
-          })
+      if (typeof id === "string") {
+        this.albumService.getAlbumById(id)
+            .subscribe((resp) => {
+              this.album = resp as AlbumModel;
+            })
+      }
     }
-*/
+
   }
 
   save(form: NgForm) {

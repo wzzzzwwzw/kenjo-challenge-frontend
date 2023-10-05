@@ -23,7 +23,7 @@ export class AlbumService {
 
   createAlbum( album: AlbumModel ){
 
-    return this.http.post(`${ALBUM_URL }/album/`, album)
+    return this.http.post(`${ALBUM_URL }/create`, album)
         .pipe(
             map( (resp: any) => {
               album._id =resp._id;

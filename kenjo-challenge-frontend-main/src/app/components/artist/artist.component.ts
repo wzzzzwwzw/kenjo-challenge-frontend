@@ -9,7 +9,7 @@ import { ArtistModel } from '../../shared/models/artist.model';
 import { ArtistService } from '../../services/artist.service';
 
 import Swal from 'sweetalert2';
-import {AlbumModel} from "../../shared/models/album.model";
+
 
 
 @Component({
@@ -22,7 +22,6 @@ export class ArtistComponent implements OnInit {
 
   artist: ArtistModel = new ArtistModel();
 
-  artistsList: ArtistModel[] = [];
 
   constructor(private artistService: ArtistService,
               private route: ActivatedRoute,
@@ -42,7 +41,7 @@ export class ArtistComponent implements OnInit {
     }
   }
 
-  save(form: NgForm) {
+  async save(form: NgForm) {
 
     if (form.invalid) {
       console.log('Form is not valid');
@@ -53,21 +52,21 @@ export class ArtistComponent implements OnInit {
       title: 'Wait',
       text: 'Saving data',
       icon: 'info',
-      allowOutsideClick: false
+      allowOutsideClick: true
     });
-    Swal.showLoading();
+    await Swal.showLoading();
 
     let petition: Observable<any>;
 
     if (this.artist._id) {
-      petition = this.artistService.updateArtist( this.artist )
+      petition = this.artistService.updateArtist(this.artist)
 
 
     } else {
-      petition = this.artistService.createArtist( this.artist )
+      petition = this.artistService.createArtist(this.artist)
 
     }
-    petition.subscribe ( resp => {
+    petition.subscribe(resp => {
       Swal.fire({
         title: this.artist.name,
         text: 'Updated successfully',
