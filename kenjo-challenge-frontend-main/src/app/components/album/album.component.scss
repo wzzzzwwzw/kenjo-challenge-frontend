@@ -1,0 +1,42 @@
+.album-form {
+  margin-top: 1rem;
+}
+
+.album-form label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.album-form input,
+.album-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.album-form input:focus,
+.album-form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.album-form button {
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.album-form button:hover {
+  cursor: pointer;
+}
+
+.album-form .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.album-form .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
