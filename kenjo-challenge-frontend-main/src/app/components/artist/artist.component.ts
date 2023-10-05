@@ -44,13 +44,13 @@ export class ArtistComponent implements OnInit {
   async save(form: NgForm) {
 
     if (form.invalid) {
-      console.log('Form is not valid');
+      console.log('Form not valid!!');
       return;
     }
 
     Swal.fire({
       title: 'Wait',
-      text: 'Saving data',
+      text: 'Saving..',
       icon: 'info',
       allowOutsideClick: true
     });
@@ -69,7 +69,7 @@ export class ArtistComponent implements OnInit {
     petition.subscribe(resp => {
       Swal.fire({
         title: this.artist.name,
-        text: 'Updated successfully',
+        text: 'Updated !!',
         icon: 'success'
       })
       this.router.navigate(['/artists']);

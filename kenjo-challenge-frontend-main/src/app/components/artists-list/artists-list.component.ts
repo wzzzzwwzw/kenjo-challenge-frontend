@@ -29,7 +29,7 @@ export class ArtistsListComponent implements OnInit {
   deleteArtist( artist: ArtistModel, i: number){
 
     Swal.fire({
-      title:'Are you sure?',
+      title:'You sure?',
       text:`Do you want to delete ${ artist.name } ?`,
       icon: 'question',
       showConfirmButton: true,

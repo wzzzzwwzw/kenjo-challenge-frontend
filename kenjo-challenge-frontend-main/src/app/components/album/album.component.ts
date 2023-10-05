@@ -52,7 +52,7 @@ export class AlbumComponent implements OnInit {
   save(form: NgForm) {
 
     if (form.invalid) {
-      console.log('Form is not valid');
+      console.log('Form not valid!!');
       return;
     }
     this.scoreAlbum(form.value.score);
@@ -60,7 +60,7 @@ export class AlbumComponent implements OnInit {
 
     Swal.fire({
       title: 'Wait',
-      text: 'Saving data',
+      text: 'Saving..',
       icon: 'info',
       allowOutsideClick: true
     });
@@ -77,7 +77,7 @@ export class AlbumComponent implements OnInit {
     petition.subscribe( resp => {
       Swal.fire({
         title: this.album.title,
-        text: 'Updated successfully',
+        text: 'Updated !!',
         icon: 'success'
       })
       this.router.navigate(['/home']);
