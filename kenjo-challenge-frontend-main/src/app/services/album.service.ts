@@ -40,16 +40,15 @@ export class AlbumService {
     }
 
 
-    updateAlbum(album: AlbumModel) {
+   updateAlbum(album: AlbumModel) {
 
-        const albumTemp = {
-            ...album
-        };
-
-        //delete albumTemp._id;
-
-        return this.http.put(`${ALBUM_URL}/album/${album._id}`, albumTemp);
+        return this.http.put(`${ALBUM_URL}/album/${album._id}`, album);
 
     }
+
+
+
+
+
 
 }
