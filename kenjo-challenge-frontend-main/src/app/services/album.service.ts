@@ -35,7 +35,7 @@ export class AlbumService {
 
     getAlbumById(id: string) {
 
-        return this.http.get(`${ALBUM_URL}/album/${id}`);
+        return this.http.get(`${ALBUM_URL}${id}`);
 
     }
 

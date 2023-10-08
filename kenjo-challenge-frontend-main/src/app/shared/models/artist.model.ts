@@ -1,6 +1,6 @@
 export class ArtistModel {
 
-    _id?: string;
+    _id!: string;
     name!: string;
     photoUrl!: string;
     birthdate!: Date;
