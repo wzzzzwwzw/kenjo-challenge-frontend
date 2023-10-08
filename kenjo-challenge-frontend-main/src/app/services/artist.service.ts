@@ -44,13 +44,8 @@ export class ArtistService {
 
     updateArtist(artist: ArtistModel) {
 
-        const artistTemp = {
-            ...artist
-        };
 
-        delete artistTemp._id;
-
-        return this.http.put(`${ARTIST_URL}/${artist._id}`, artistTemp);
+        return this.http.put(`${ARTIST_URL}/${artist._id}`, artist);
 
     }
 
