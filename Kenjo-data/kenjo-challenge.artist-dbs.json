@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "651f050e8e4529bf85051932"
+  },
+  "name": "Bad Bunny",
+  "photoUrl": "https://www.billboard.com/wp-content/uploads/2023/07/Bad-Bunny-Un-Verano-Sin-Ti-album-art-billboard-1240.jpg?w=1024",
+  "birthdate": "2008-02-05",
+  "deathDate": "2023-10-05",
+  "__v": 0
+}]

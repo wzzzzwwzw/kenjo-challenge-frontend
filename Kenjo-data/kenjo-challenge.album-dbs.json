@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "651ef9862d6bf7782e11c48d"
+  },
+  "title": "Ariana Grande, Sweetener (2018)",
+  "coverUrl": "https://www.billboard.com/wp-content/uploads/media/ariana-grande-sweetner-album-art-2018-billboard-1240.jpg?w=1024",
+  "year": 2018,
+  "genre": "R&B-heavy",
+  "score": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651ef9c72d6bf7782e11c490"
+  },
+  "title": "A$AP Rocky, ‘Long. Live. A$AP’ (2013)",
+  "coverUrl": "https://www.billboard.com/wp-content/uploads/2023/07/asap-rocky-long-live-asap-2013-billboard-1240.jpg?w=1024",
+  "year": 2013,
+  "genre": "Hip Hop",
+  "score": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651ef9fb2d6bf7782e11c493"
+  },
+  "title": "Tyler the Creator, ‘Igor’ (2019)",
+  "coverUrl": "https://www.billboard.com/wp-content/uploads/media/tyler-the-creator-igor-album-art-2019-billboard-embed.jpg?w=1024",
+  "year": 2019,
+  "genre": "Funk",
+  "score": 4.5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651f05588e4529bf85051937"
+  },
+  "title": "El conejo malo",
+  "artistId": {
+    "$oid": "651f050e8e4529bf85051932"
+  },
+  "coverUrl": "https://i.pinimg.com/originals/fd/89/c3/fd89c3bf5fb8a384b9c514b10daa547f.jpg",
+  "year": 2017,
+  "genre": "reggaeton",
+  "score": 5,
+  "__v": 0
+}]

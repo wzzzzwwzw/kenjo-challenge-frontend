@@ -68,7 +68,7 @@ export class AlbumComponent implements OnInit {
             title: 'Wait',
             text: 'Saving..',
             icon: 'info',
-            allowOutsideClick: true
+            allowOutsideClick: false
         });
         Swal.showLoading();
 
